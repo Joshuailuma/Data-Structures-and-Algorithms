@@ -3,9 +3,9 @@ public class LinkedList {
     private Node tail;
     private int length;
 
-    class Node {
-        int value;
-        Node next;
+   public class Node {
+        public int value;
+        public Node next;
         Node(int value){
             this.value = value;
         }
@@ -17,21 +17,13 @@ public class LinkedList {
         this. length = 1;
     }
 
-    public String getHead() {
-        if(head == null){
-            return "Head is "+ null;
-        } else {
-            return "Head is "+head.value;
-        }
+    public Node getHead() {
+        return head;
 
     }
 
-    public String getTail() {
-        if(tail == null){
-            return "Tail is "+ null;
-        } else {
-            return "Tail is "+tail.value;
-        }
+    public Node getTail() {
+        return tail;
     }
 
     public int getLength() {
@@ -179,7 +171,7 @@ public class LinkedList {
 
         for (int i = 0; i < length; i++){
             after = temp.next;
-            temp.next = before;
+            temp.next = before; //Flip pointer backward
             before= temp;
             temp = after;
         }
@@ -194,6 +186,24 @@ public class LinkedList {
             slow = slow.next;
         }
         return slow;
+    }
 
+    public boolean hasLoop(){
+        Node fast = head;
+        Node slow =head;
+
+        while (fast!= null &&fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Node findKthNodeFromEnd(int index){
+       reverse();
+       return gett(index-1);
     }
 }
