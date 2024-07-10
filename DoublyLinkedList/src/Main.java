@@ -4,9 +4,9 @@ public class Main {
     * */
     public static void main(String[] args) {
         DoublyLinkedList doublyLinkedList = new DoublyLinkedList(1);
-//        doublyLinkedList.append(2);
-//        doublyLinkedList.append(3);
-//        doublyLinkedList.append(4);
+        doublyLinkedList.append(2);
+        doublyLinkedList.append(3);
+        doublyLinkedList.append(4);
 //        doublyLinkedList.printList();
 
         //====REMOVE LAST =====
@@ -65,15 +65,21 @@ public class Main {
 //
 //        doublyLinkedList.printList();
 
-        //==== CHECK IF IT IS PALINDROME =====
-        doublyLinkedList.append(2);
-        doublyLinkedList.append(4);
-        doublyLinkedList.append(4);
-        doublyLinkedList.append(4);
-        doublyLinkedList.append(2);
-        doublyLinkedList.append(1);
+//        //==== CHECK IF IT IS PALINDROME =====
+//        doublyLinkedList.append(2);
+//        doublyLinkedList.append(4);
+//        doublyLinkedList.append(4);
+//        doublyLinkedList.append(4);
+//        doublyLinkedList.append(2);
+//        doublyLinkedList.append(1);
+//        doublyLinkedList.printList();
+//        System.out.println("Checking Palindrome");
+//        System.out.println(doublyLinkedList.isPalindrome());
+
+//        //==== SWAP PAIRS =====
         doublyLinkedList.printList();
-        System.out.println("Checking Palindrome");
-        System.out.println(doublyLinkedList.isPalindrome());
+        System.out.println("Swapping pairs");
+        doublyLinkedList.swapPairs();
+        doublyLinkedList.printList();
     }
 }
